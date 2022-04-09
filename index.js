@@ -17,3 +17,7 @@ app.route('/').put((request, response) => {
     author = request.body.author
     response.send(author)
 })
+
+app.route('/:id').delete((request, response) => {
+    response.send(request.params.id)
+})

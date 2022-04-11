@@ -1,4 +1,5 @@
 const express = require('express');
+const { get } = require('express/lib/response');
 
 const app = express();
 
@@ -7,7 +8,8 @@ app.listen('3000')
 //middleware
 app.use(express.json())
 
-app.route('/').post((request, response) => {
-    const {nome, cidade} = request.body
-    response.send(`Meu nome é ${nome} e minha cidade é ${cidade}`)
-})
+app.route('/').get((req, res) => res.send("oi") )
+
+app.route('/:variavel').get((req, res) => res.send(req.params.variavel))
+
+app.route('/identidade/:nome').get((req, res) => res.send(req.params.nome))

@@ -8,6 +8,7 @@
   "author": "Bruno Felipe",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.26.1",
     "express": "^4.17.3"
   }
 }
